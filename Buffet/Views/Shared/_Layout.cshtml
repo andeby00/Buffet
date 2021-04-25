@@ -25,6 +25,24 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        @if (User.HasClaim(c => c.Type == "Reception"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Reception" asp-action="Index">Reception</a>
+                            </li>
+                        }
+                        @if (User.HasClaim(c => c.Type == "Restaurant"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Restaurant" asp-action="Index">Reception</a>
+                            </li>
+                        }
+                        @if (User.HasClaim(c => c.Type == "Kitchen"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Kitchen" asp-action="Index">Kitchen</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

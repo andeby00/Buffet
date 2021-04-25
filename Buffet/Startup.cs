@@ -12,6 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Design.Internal;
+using Microsoft.Extensions.Logging;
 
 namespace Buffet
 {
@@ -22,6 +24,7 @@ namespace Buffet
             Configuration = configuration;
         }
 
+        
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -34,10 +37,13 @@ namespace Buffet
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddAuthorization(options => { options.AddPolicy("IsReception", policyBuilder => policyBuilder.RequireClaim("Reception")); });
+            services.AddAuthorization(options => { options.AddPolicy("IsRestaurant", policyBuilder => policyBuilder.RequireClaim("Restaurant")); });
+            services.AddAuthorization(options => { options.AddPolicy("IsKitchen", policyBuilder => policyBuilder.RequireClaim("Kitchen")); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<IdentityUser> um, ILogger<Startup> log)
         {
             if (env.IsDevelopment())
             {
@@ -57,6 +63,8 @@ namespace Buffet
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            DBHelper.SeedData(um, log);
 
             app.UseEndpoints(endpoints =>
             {
