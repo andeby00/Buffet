@@ -7,6 +7,9 @@ namespace Buffet.Models
 {
     public class Reception
     {
+        //Id
+        public int Id { get; set; }
+
         //Dato
         public DateTime Date { get; set; }
 
