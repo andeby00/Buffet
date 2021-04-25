@@ -20,7 +20,7 @@ namespace Buffet.Data
         public static void SeedReceptionUser(UserManager<IdentityUser> userManager, ILogger log)
         {
             const string receptionEmail = "recep@null";
-            const string password = "abe123!";
+            const string password = "Banan123!";
 
             if (userManager.FindByNameAsync(receptionEmail).Result == null)
             {
@@ -66,7 +66,7 @@ namespace Buffet.Data
         public static void SeedKitchenUser(UserManager<IdentityUser> userManager, ILogger log)
         {
             const string kitchenEmail = "kitch@null";
-            const string password = "abe123!";
+            const string password = "Banan123!";
 
             if (userManager.FindByNameAsync(kitchenEmail).Result == null)
             {
