@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Buffet.Controllers
 {
-    public class RestaurentController : Controller
+    public class RestaurantController : Controller
     {
         public IActionResult Index()
         {
