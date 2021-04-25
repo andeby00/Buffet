@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Buffet.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Buffet.Controllers
 {
@@ -16,7 +17,9 @@ namespace Buffet.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        // GET: Kitchen
+        [Authorize(Policy = "IsKitchen")]
+        public async Task<IActionResult> Index()
         {
             return View();
         }
