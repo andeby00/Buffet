@@ -42,7 +42,7 @@ namespace Buffet.Controllers
             {
                 _context.Add(reservation);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index), reservation); //VED IK
+                return RedirectToAction(nameof(Index), reservation); 
             }
 
             return View(reservation);

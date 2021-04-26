@@ -40,7 +40,7 @@ namespace Buffet.Controllers
             {
                 _context.Add(checkedIn);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index), checkedIn); //VED IK
+                return RedirectToAction(nameof(Index), checkedIn); 
             }
 
             return View(checkedIn);
