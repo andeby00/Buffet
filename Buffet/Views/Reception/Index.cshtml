@@ -6,24 +6,25 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-ms-3">
+        <div class="col-lg-4">
             <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger" />
                 <div class="form-group">
-                    <label asp-for="Date" class="control-label"> Choose a date </label>
-                    <input asp-for="Date" class="form-control" />
-                    <span asp-validation-for="Date" class="text-danger" />
+                    <label> Creat-a new Reservation-a </label>
+                </div>
+                <div>
                     <input type="submit" value="Go" class="btn btn-secondary" />
                 </div>
             </form>
         </div>
     </div>
-    <div class="row"></div>
+    <br/>
     <div class="row">
-        <div class="col-ms-3">
+        <div class="col-lg-4">
             <form asp-action="Details">
                 <div class="form-group">
                     <label> View table for who be eatin' brekkie today</label>
+                </div>
+                <div>
                     <input type="submit" value="Go" class="btn btn-secondary" />
                 </div>
             </form>

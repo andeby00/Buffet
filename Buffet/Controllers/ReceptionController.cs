@@ -25,9 +25,6 @@ namespace Buffet.Controllers
             return View();
         }
 
-
-        // til alle der læser dette, så er koden til mads' kort 1 3 3 7
-
         // GET: Reception/Create
         [Authorize(Policy = "IsReception")]
         public IActionResult Create()
@@ -39,7 +36,7 @@ namespace Buffet.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Policy = "IsReception")]
-        public async Task<IActionResult> Create([Bind("Date,Adults,Children")] Reservation reservation)
+        public async Task<IActionResult> Create([Bind("Date, Adults, Children")] Reservation reservation)
         {
             if (ModelState.IsValid)
             {
