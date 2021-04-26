@@ -37,7 +37,7 @@ namespace Buffet.Data
                     (user, password).Result;
                 if (result.Succeeded)
                 {
-                    var claim = new Claim("ReceptionUser", "Yes");
+                    var claim = new Claim("Reception", "Yes");
                     userManager.AddClaimAsync(user, claim);
                 }
             }
@@ -60,7 +60,7 @@ namespace Buffet.Data
                     (user, password).Result;
                 if (result.Succeeded)
                 {
-                    var claim = new Claim("RestaurantUser", "Yes");
+                    var claim = new Claim("Restaurant", "Yes");
                     userManager.AddClaimAsync(user, claim);
                 }
             }
