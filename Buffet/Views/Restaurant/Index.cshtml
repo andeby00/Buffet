@@ -1,0 +1,23 @@
+﻿@model Buffet.Models.CheckedIn
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-ms-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger" />
+                <div class="form-group">
+                    <label asp-for="Date" class="control-label"> Choose a date </label>
+                    <input asp-for="Date" class="form-control" />
+                    <span asp-validation-for="Date" class="text-danger" />
+                    <input type="submit" value="Go" class="btn btn-secondary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    
