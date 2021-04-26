@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Buffet.Data;
 using Buffet.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
 
 namespace Buffet.Controllers
 {
@@ -19,12 +16,6 @@ namespace Buffet.Controllers
             _context = context;
         }
 
-        //[Authorize(Policy = "IsKitchen")]
-        //public async Task<IActionResult> Index()
-        //{
-        //    return (View(await _context.reservations.ToListAsync()), View(await _context.receptions.ToListAsync()));
-        //}
-
         [Authorize(Policy = "IsKitchen")]
         public IActionResult Index()
         {
@@ -36,8 +27,10 @@ namespace Buffet.Controllers
         {
             var vm = new KitchenViewModel()
             {
-                 res = _context.Bookings.Where(b => b.BookingDate >= Date.Date && b.BookingDate < filterDate).ToList();
-        }
+                Reservations = _context.Reservations.Where(r => r.Date >= date.Date && r.Date < date.Date.AddDays(1)).ToList(),
+                CheckedIns = _context.CheckedIns.Where(r => r.Date >= date.Date && r.Date < date.Date.AddDays(1)).ToList(),
+                Date = date
+            };
             return View(vm);
         }
     }

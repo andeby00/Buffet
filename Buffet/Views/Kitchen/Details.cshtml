@@ -1,5 +1,4 @@
 ﻿@model Buffet.Models.KitchenViewModel
-
 @{
     ViewData["Title"] = "Kitchen";
 }
@@ -7,7 +6,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md">
-            <label asp-for="Date" class="control-label"> Choose a date </label>
+            <form asp-action="Details">
+                <div asp-validation-summary="ModelOnly" class="text-danger" />
+                <div class="form-group">
+                    <label asp-for="Date" class="control-label"> Choose a date </label>
+                    <input asp-for="Date" class="form-control" />
+                    <span asp-validation-for="Date" class="text-danger" />
+                    <input type="submit" value="Go" class="btn btn-secondary" />
+                </div>
+            </form>
         </div>
     </div>
     <div class="row">
@@ -16,16 +23,16 @@
         </div>
         <div class="col-md-3">
             <span asp-validation-for="Date" class="text-danger" />
-            <input type="submit" value="Go" class="btn btn-primary" />
+            <input type="submit" value="Go" class="btn btn-second" />
         </div>
     </div>
     <div class="row">
         <div class="col-md" align="left">
             <p>
                 <strong>
-                    Total expected guests 
+                    Total expected guests
                 </strong>
-                @Model.Date
+                @Model.ExpectedGuests
             </p>
         </div>
     </div>
@@ -35,7 +42,7 @@
                 <strong>
                     Expected children
                 </strong>
-                @Model.Date
+                @Model.ExpectedChildren
             </p>
         </div>
     </div>
@@ -43,9 +50,9 @@
         <div class="col-md" align="left">
             <p>
                 <strong>
-                    Expected adults 
+                    Expected adults
                 </strong>
-                @Model.Date
+                @Model.ExpectedAdults
             </p>
         </div>
     </div>
@@ -55,7 +62,7 @@
                 <strong>
                     Adults checked in
                 </strong>
-                @Model.Date
+                @Model.AdultsCheckedIn
             </p>
         </div>
     </div>
@@ -63,9 +70,9 @@
         <div class="col-md" align="left">
             <p>
                 <strong>
-                    Children checked in 
+                    Children checked in
                 </strong>
-                @Model.Date
+                @Model.ChildrenCheckedIn
             </p>
         </div>
     </div>
@@ -75,7 +82,7 @@
                 <strong>
                     Total guests not checked in
                 </strong>
-                @Model.Date
+                @Model.TotalNotCheckedIn
             </p>
         </div>
     </div>
@@ -85,7 +92,7 @@
                 <strong>
                     Children not checked in
                 </strong>
-                @Model.Date
+                @Model.ChildrenNotCheckedIn
             </p>
         </div>
     </div>
@@ -95,8 +102,10 @@
                 <strong>
                     Adults not checked in
                 </strong>
-                @Model.Date
+                @Model.AdultsNotCheckedIn
             </p>
         </div>
     </div>
 </div>
+
+
