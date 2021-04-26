@@ -13,8 +13,8 @@ namespace Buffet.Data
             : base(options)
         {
         }
-        public DbSet<Reservation> reservations { get; set; }
-        public DbSet<Reception> receptions { get; set; }
+        public DbSet<CheckedIn> reservations { get; set; }
+        public DbSet<Reservation> receptions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

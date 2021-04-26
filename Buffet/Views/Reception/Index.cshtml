@@ -1,0 +1,13 @@
+﻿@model Buffet.Models.Reservation
+
+@{
+    ViewData["Title"] = "Reception";
+}
+
+
+<div>
+    <label asp-for="Date" class="control-label"> Choose a date </label>
+    <input asp-for="Date" class="form-control" />
+    <span asp-validation-for="Date" class="text-danger" />
+    <input type="submit" value="Go" class="btn btn-primary" />
+</div>
