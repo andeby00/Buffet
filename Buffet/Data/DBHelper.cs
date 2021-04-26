@@ -23,7 +23,7 @@ namespace Buffet.Data
         public static void SeedReceptionUser(UserManager<IdentityUser> userManager, ILogger log)
         {
             const string receptionEmail = "recep@null";
-            const string password = "Banan123!";
+            const string password = "Database123!";
 
             if (userManager.FindByNameAsync(receptionEmail).Result == null)
             {
@@ -37,7 +37,7 @@ namespace Buffet.Data
                     (user, password).Result;
                 if (result.Succeeded)
                 {
-                    var claim = new Claim("Admin", "Yes");
+                    var claim = new Claim("ReceptionUser", "Yes");
                     userManager.AddClaimAsync(user, claim);
                 }
             }
@@ -46,7 +46,7 @@ namespace Buffet.Data
         public static void SeedRestaurantUser(UserManager<IdentityUser> userManager, ILogger log)
         {
             const string restaurantEmail = "restau@null";
-            const string password = "abe123!";
+            const string password = "Database123!";
 
             if (userManager.FindByNameAsync(restaurantEmail).Result == null)
             {
@@ -60,7 +60,7 @@ namespace Buffet.Data
                     (user, password).Result;
                 if (result.Succeeded)
                 {
-                    var claim = new Claim("Admin", "Yes");
+                    var claim = new Claim("RestaurantUser", "Yes");
                     userManager.AddClaimAsync(user, claim);
                 }
             }
@@ -69,7 +69,7 @@ namespace Buffet.Data
         public static void SeedKitchenUser(UserManager<IdentityUser> userManager, ILogger log)
         {
             const string kitchenEmail = "kitch@null";
-            const string password = "Banan123!";
+            const string password = "Database123!";
 
             if (userManager.FindByNameAsync(kitchenEmail).Result == null)
             {
@@ -83,7 +83,7 @@ namespace Buffet.Data
                     (user, password).Result;
                 if (result.Succeeded)
                 {
-                    var claim = new Claim("Kitchen", "KITCHEN");
+                    var claim = new Claim("Kitchen", "Yes");
                     userManager.AddClaimAsync(user, claim);
                 }
             }
