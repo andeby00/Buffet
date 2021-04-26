@@ -56,5 +56,21 @@ namespace Buffet.Controllers
         {
             return View();
         }
+
+        // POST: Reception/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Policy = "IsReception")]
+        public async Task<IActionResult> Details([Bind("Date,Adults,Children,RoomNumber")] CheckedIn checkedIn)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(checkedIn);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index), checkedIn); //VED IK
+            }
+
+            return View(checkedIn);
+        }
     }
 }
