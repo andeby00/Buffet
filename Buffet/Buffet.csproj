@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Kitchen\" />
+    <Folder Include="Views\Restaurant\" />
   </ItemGroup>
 
 </Project>

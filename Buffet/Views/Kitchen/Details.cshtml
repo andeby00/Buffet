@@ -5,25 +5,20 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md">
-            <form asp-action="Details">
-                <div asp-validation-summary="ModelOnly" class="text-danger" />
-                <div class="form-group">
-                    <label asp-for="Date" class="control-label"> Choose a date </label>
-                    <input asp-for="Date" class="form-control" />
-                    <span asp-validation-for="Date" class="text-danger" />
-                    <input type="submit" value="Go" class="btn btn-secondary" />
-                </div>
-            </form>
-        </div>
+        <form asp-action="Details" method="post">
+            <input type="hidden" asp-for="Date" />
+            <input type="submit" value="Refresh" class="btn btn-primary" />
+        </form>
     </div>
     <div class="row">
-        <div class="col-md-3">
-            <input asp-for="Date" class="form-control" />
+        <div class="col-md-4">
+            <input asp-for="Date" class="form-control"/>
         </div>
-        <div class="col-md-3">
-            <span asp-validation-for="Date" class="text-danger" />
-            <input type="submit" value="Go" class="btn btn-second" />
+        <div class="col-md-4">
+            <span asp-validation-for="Date" class="text-danger"/>
+        </div>
+        <div class="col-md-4">
+            <input type="submit" value="Go" class="btn btn-secondary"/>
         </div>
     </div>
     <div class="row">

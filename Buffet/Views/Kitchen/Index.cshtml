@@ -1,21 +1,20 @@
-﻿
+﻿@model Buffet.Models.KitchenViewModel
 
 @{
     ViewData["Title"] = "Kitchen";
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col-md">
-            <form asp-action="Details">
-                <div asp-validation-summary="ModelOnly" class="text-danger"/>
-                <div class="form-group">
-                    <label asp-for="Date" class="control-label"> Choose a date </label>
-                    <input asp-for="Date" class="form-control"/>
-                    <span asp-validation-for="Date" class="text-danger"/>
-                    <input type="submit" value="Go" class="btn btn-secondary"/>
-                </div>
-            </form>
-        </div>
+
+<div class="row">
+    <div class="col-md-3">
+        <form asp-action="Details">
+            <div asp-validation-summary="ModelOnly" class="text-danger" />
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"> Choose a date </label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger" />
+                <input type="submit" value="Go" class="btn btn-secondary" />
+            </div>
+        </form>
     </div>
 </div>
