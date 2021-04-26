@@ -13,9 +13,6 @@ namespace Buffet.Models
         //Dato
         public DateTime Date { get; set; }
 
-        //Værelsesnummer
-        public string RoomNumber { get; set; }
-
         //Antal Voksne
         public int Adults { get; set; }
 
