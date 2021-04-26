@@ -1,0 +1,102 @@
+﻿@model Buffet.Models.KitchenViewModel
+
+@{
+    ViewData["Title"] = "Kitchen";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <label asp-for="Date" class="control-label"> Choose a date </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <input asp-for="Date" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <span asp-validation-for="Date" class="text-danger" />
+            <input type="submit" value="Go" class="btn btn-primary" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md" align="left">
+            <p>
+                <strong>
+                    Total expected guests 
+                </strong>
+                @Model.Date
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md" align="left">
+            <p>
+                <strong>
+                    Expected children
+                </strong>
+                @Model.Date
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md" align="left">
+            <p>
+                <strong>
+                    Expected adults 
+                </strong>
+                @Model.Date
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md" align="left">
+            <p>
+                <strong>
+                    Adults checked in
+                </strong>
+                @Model.Date
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md" align="left">
+            <p>
+                <strong>
+                    Children checked in 
+                </strong>
+                @Model.Date
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md" align="left">
+            <p>
+                <strong>
+                    Total guests not checked in
+                </strong>
+                @Model.Date
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md" align="left">
+            <p>
+                <strong>
+                    Children not checked in
+                </strong>
+                @Model.Date
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md" align="left">
+            <p>
+                <strong>
+                    Adults not checked in
+                </strong>
+                @Model.Date
+            </p>
+        </div>
+    </div>
+</div>
