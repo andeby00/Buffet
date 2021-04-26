@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
@@ -13,7 +14,9 @@ namespace Buffet.Data
         public static void SeedData(UserManager<IdentityUser> um, ILogger log)
         {
             SeedReceptionUser(um, log);
+            Thread.Sleep(1000);
             SeedRestaurantUser(um, log);
+            Thread.Sleep(1000);
             SeedKitchenUser(um, log);
         }
 
@@ -80,7 +83,7 @@ namespace Buffet.Data
                     (user, password).Result;
                 if (result.Succeeded)
                 {
-                    var claim = new Claim("Admin", "Yes");
+                    var claim = new Claim("Kitchen", "KITCHEN");
                     userManager.AddClaimAsync(user, claim);
                 }
             }

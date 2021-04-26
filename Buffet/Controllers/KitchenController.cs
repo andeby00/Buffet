@@ -18,13 +18,16 @@ namespace Buffet.Controllers
             _context = context;
         }
 
-        [Authorize(Policy = "IsKitchen")]
-        public async Task<IActionResult> Index()
-        {
-            return (View(await _context.reservations.ToListAsync()), View(await _context.receptions.ToListAsync()));
-        }
+        //[Authorize(Policy = "IsKitchen")]
+        //public async Task<IActionResult> Index()
+        //{
+        //    return (View(await _context.reservations.ToListAsync()), View(await _context.receptions.ToListAsync()));
+        //}
 
-        //public IActionResult Index()
-        //{ return View(); }
+        [Authorize(Policy = "IsKitchen")]
+        public IActionResult Index()
+        {
+            return View(); 
+        }
     }
 }
