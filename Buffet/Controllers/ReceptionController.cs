@@ -49,10 +49,12 @@ namespace Buffet.Controllers
         }
 
         [Authorize(Policy = "IsReception")]
-        public IActionResult Details(DateTime date)
+        public async Task<IActionResult> Details([Bind("Date")] CheckedIn reservation)
         {
-            var bluds = _context.CheckedIns.Where(c => c.Date >= date.Date && c.Date < date.Date.AddDays(1)).ToList();
-            return View(bluds);
+            var date = DateTime.Today;
+            var people = await _context.CheckedIns.Where(c => date.Date <= c.Date && c.Date < date.Date.AddDays(1)).ToListAsync();
+            
+            return View(people);
         }
     }
 }

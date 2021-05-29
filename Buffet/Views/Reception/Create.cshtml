@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
-            <form asp-action="Restaurant">
+            <form asp-action="Create" asp-controller="Reception">
                 <div asp-validation-summary="ModelOnly" class="text-danger" />
                 <div class="form-group">
                     <label asp-for="Date" class="control-label" > Insert date for breakfast</label>
@@ -27,6 +27,9 @@
                     <input type="submit" value="Create" class="btn btn-secondary" />
                 </div>
             </form>
-        </div>
+        </div>+
+        
+        
+
     </div>
 </div>

@@ -3,21 +3,21 @@
     ViewData["Title"] = "Reception";
 }
 
+
 <h1>Following table shows who's eaten brekkie today </h1>
 <table class="table">
     <thead>
-    <tr>
-        <th>
-            RoomNumber
-        </th>
-        <th>
-            Children checked in
-        </th>
-        <th>
-            Adults checked in
-        </th>
-    </tr>
-
+        <tr>
+            <th>
+                RoomNumber
+            </th>
+            <th>
+                Children checked in
+            </th>
+            <th>
+                Adults checked in
+            </th>
+        </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
@@ -27,10 +27,10 @@
                     @Html.DisplayFor(modelItem => item.RoomNumber)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Children)
+                    @Html.DisplayFor(modelItem => item.Adults)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Adults)
+                    @Html.DisplayFor(modelItem => item.Children)
                 </td>
             </tr>
         }
